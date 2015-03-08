@@ -9,6 +9,8 @@
 <body>
   <%= render "nav" %>
   <div class="container">
+    <div class="bg-success"><%= notice %></div>
+    <div class="bg-danger"><%= alert %></div>
     <%= yield %>
   </div>
 </body>

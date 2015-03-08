@@ -13,4 +13,8 @@ class CartItem
   def product
     Product.find product_id
   end
+
+  def total_price
+    quantity * product.price
+  end
 end
