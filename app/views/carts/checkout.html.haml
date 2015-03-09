@@ -15,6 +15,7 @@
     = number_to_currency @cart.total_price
 
 = form_for @order_form, url: orders_path do |f|
+  = render "orders/errors"
   %h3 Some of your personal details
   = f.fields_for :user, f.object.user do |u|
     .form-group
@@ -30,3 +31,5 @@
         %p.col-md-3= u.text_field :city, placeholder: "city", class: "form-control"
       %p= u.country_select :country, { priority_countries: [ "HU", "GB", "US", "DE" ] }, class: "form-control"
       %p= u.text_field :phone, placeholder: "Phone", class: "form-control"
+
+  %p= f.submit "Place order", class: "btn btn-primary"
