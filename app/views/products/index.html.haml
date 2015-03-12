@@ -2,6 +2,5 @@
 
 = render "products/table", products: @products
 
-%br
-
-= link_to 'New Product', new_product_path, class: 'btn btn-primary'
+- if current_user && current_user.admin?
+  %p= link_to 'New Product', new_product_path, class: 'btn btn-primary'

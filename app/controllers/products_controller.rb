@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_filter :initialize_cart
+  before_action :authenticate_admin!, only: [ :new, :create, :edit, :update, :destroy ]
 
   # GET /products
   # GET /products.json
